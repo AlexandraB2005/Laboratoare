@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+        let count = 0;
+     function changeImage() {
+    var image = document.getElementById('img');
+    if (image.src.match("Bec_stins.gif")) {
+        image.src = "Bec_aprins.gif";
+        count++;
+        document.getElementById('count').innerHTML = count;
+    } else {
+        image.src = "Bec_stins.gif";
+    }
+}
+    </script>
+  </head>
+  <body>
+    <h1>Contor aprinderi bec</h1>
+    <img id="img" onclick="changeImage();" src="Bec_stins.gif" width="100" height="180">
+    <p>Numar aprinderi bec: <span id="count"></span></p>
+  </body>
+</html>
