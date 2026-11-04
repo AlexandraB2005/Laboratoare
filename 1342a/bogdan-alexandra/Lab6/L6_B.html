@@ -5,8 +5,8 @@
 </head>
 <body>
    <button onclick="interchangeText()">Click me</button>
-   <p id="par" onclick="changeText1()">Text initial</p>
-   <p id="par2" onclick="changeText2()">Text initial 2</p>
+   <p id="par" style="color: blue; background-color: lightgray;" onclick="changeText1()">Text initial</p>
+   <p id="par2" style="color: red; background-color: lightblue;" onclick="changeText2()">Text initial 2</p>
 <script>
 function changeText1() {
     var text = prompt("Introduceti noul text al paragrafului:", "Text initial");
@@ -23,6 +23,7 @@ function interchangeText() {
     var temp = document.getElementById("par").innerHTML;
     document.getElementById("par").innerHTML = document.getElementById("par2").innerHTML;
     document.getElementById("par2").innerHTML = temp;
+  
 }
 </script>
 </body>

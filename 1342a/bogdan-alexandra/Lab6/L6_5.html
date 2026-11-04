@@ -28,21 +28,30 @@ la mouseout va aparea o Mare
 var animals = document.getElementsByClassName("animal");
 var landscapes = document.getElementsByClassName("peisaj");
 
-animals[0].addEventListener("click", function () {
-    animals[0].src = "Img/pisici.jpg";
-});
+var firstAnimal = animals[0];
+var secondAnimal = animals[1];
+var firstLandscape = landscapes[0];
+var secondLandscape = landscapes[1];
 
-landscapes[0].addEventListener("mouseover", function () {
-    landscapes[0].src = "Img/munti.jpg";
-});
+function showCats() {
+    firstAnimal.src = "Img/pisici.jpg";
+}
 
-animals[1].addEventListener("click", function () {
-    animals[1].src = "Img/caini.jpg";
-});
+function showMountains() {
+    firstLandscape.src = "Img/munti.jpg";
+}
 
-landscapes[1].addEventListener("mouseout", function () {
-    landscapes[1].src = "Img/mare.jpg";
-});
+function showDogs() {
+    secondAnimal.src = "Img/caini.jpg";
+}
+
+function showSea() {
+    secondLandscape.src = "Img/mare.jpg";
+}
+firstAnimal.addEventListener("click", showCats);
+firstLandscape.addEventListener("mouseover", showMountains);
+secondAnimal.addEventListener("click", showDogs);
+secondLandscape.addEventListener("mouseout", showSea);
 </script>
 
 </body>
