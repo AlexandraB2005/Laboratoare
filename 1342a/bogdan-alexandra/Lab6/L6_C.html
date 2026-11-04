@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1 onclick="changeTitleColor()"> titlu pagina Lab6</h1>
+<p onclick="changeParagraphBackground()">Creați fișierul L6_C.html cu un titlu de câteva cuvinte și un paragraf cu trei linii de text. La clic pe titlu,
+un prompt cere o culoare, iar culoarea textului titlului devine cea dată, dacă este corectă. La clic pe paragraf, în mod
+similar, se schimbă culoarea de fundal a acestuia. O culoare incorectă („verdeee”) nu schimbă nimic și este semnalată cu
+o alertă.
+Indicație: CSS.</p>
+
+<script>
+    function changeTitleColor() {
+        var color = prompt("Introduceti o culoare pentru titlu:");
+        if (isValidColor(color)) {
+            document.getElementsByTagName("h1")[0].style.color = color;
+        } else {
+            alert("Culoare incorecta!");
+        }
+    }
+    function changeParagraphBackground() {
+        var color = prompt("Introduceti o culoare pentru fundalul paragrafului:");
+        if (isValidColor(color)) {
+            document.getElementsByTagName("p")[0].style.backgroundColor = color;
+        } else {
+            alert("Culoare incorecta!");
+        }
+    }
+    function isValidColor(color) {
+       
+        return CSS.supports("color", color);
+    }
+</script>
+</body>
+</html>

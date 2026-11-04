@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Document creat cu JavaScript</title>
+</head>
+<body>
+    <script>
+	function addParagraph_title() {
+        var title = document.createElement("h1");
+        title.textContent = "Header mare";
+        title.style.color = "blue";
+
+        document.body.appendChild(title);
+
+        var newParagraph = document.createElement("p");
+        newParagraph.innerHTML = "paragraf<br>cu trei<br>linii";
+        newParagraph.style.backgroundColor = "yellow";
+        document.body.appendChild(newParagraph);
+    }
+    window.addEventListener("load", addParagraph_title);
+	</script>
+</body>
+</html>

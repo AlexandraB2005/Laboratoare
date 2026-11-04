@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #currentImage {
+            width: 320px;
+            height: 240px;
+            display: block;
+        }
+
+        #controls {
+            width: 320px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<img id="currentImage" alt="Imagine curenta">
+<div id="controls">
+    <button onclick="nextImage()">Next</button>
+    
+    <button onclick="previousImage()">Previous</button>
+    <p id="imageCounter"></p>
+</div>
+
+<script>
+    var currentImage = 0;
+    var images = [
+        "caini.jpg",
+        "mare.jpg",
+        "munti.jpg",
+        "pisici.jpg",
+    ];
+    var img = document.getElementById("currentImage");
+    var imageCounter = document.getElementById("imageCounter");
+
+    function nextImage() {
+        currentImage = (currentImage + 1) % images.length;
+        updateImage();
+    }
+
+    function previousImage() {
+        currentImage = (currentImage - 1 + images.length) % images.length;
+        updateImage();
+    }
+
+    function updateImage() {
+        img.src = "Img/" + images[currentImage];
+        imageCounter.textContent =  (currentImage + 1) + " / " + images.length;
+    }
+
+    updateImage();
+</script>
+
+</body>
+</html>
